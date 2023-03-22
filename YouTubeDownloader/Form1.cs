@@ -23,13 +23,13 @@ namespace YouTubeDownloader
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(folderBrowserDialog1.ShowDialog() ==  DialogResult.OK)
-            { 
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
                 Path = folderBrowserDialog1.SelectedPath;
                 label1.Text = "Location: " + folderBrowserDialog1.SelectedPath;
             }
         }
-            private void Processer_DoWork(object sender, DoWorkEventArgs e)
+        private void Processer_DoWork(object sender, DoWorkEventArgs e)
         {
             StreamReader StandardOutput = e.Argument as StreamReader;
             string data = StandardOutput.ReadLine();
@@ -80,7 +80,15 @@ namespace YouTubeDownloader
                 using (Process process = new Process())
                 {
                     process.StartInfo.FileName = "yt-dlp.exe";
-                    process.StartInfo.Arguments = "-P " + Path + fileType + URL;
+                    if (fileType == "")
+                    {
+                        process.StartInfo.Arguments = "-P " + Path + URL;
+                        MessageBox.Show(process.StartInfo.Arguments);
+                    }
+                    else
+                    {
+                        process.StartInfo.Arguments = "-P " + Path + fileType + URL;
+                    }
                     process.StartInfo.UseShellExecute = false;
                     process.StartInfo.CreateNoWindow = true;
                     process.StartInfo.RedirectStandardOutput = true;
@@ -95,6 +103,11 @@ namespace YouTubeDownloader
         {
             richTextBox1.SelectionStart = richTextBox1.Text.Length;
             richTextBox1.ScrollToCaret();
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            fileType = " ";
         }
     }
 }
