@@ -80,15 +80,7 @@ namespace YouTubeDownloader
                 using (Process process = new Process())
                 {
                     process.StartInfo.FileName = "yt-dlp.exe";
-                    if (fileType == "")
-                    {
-                        process.StartInfo.Arguments = "-P " + Path + URL;
-                        MessageBox.Show(process.StartInfo.Arguments);
-                    }
-                    else
-                    {
-                        process.StartInfo.Arguments = "-P " + Path + fileType + URL;
-                    }
+                    process.StartInfo.Arguments = "-P " + Path + fileType + URL;
                     process.StartInfo.UseShellExecute = false;
                     process.StartInfo.CreateNoWindow = true;
                     process.StartInfo.RedirectStandardOutput = true;
