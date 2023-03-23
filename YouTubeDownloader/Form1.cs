@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
+using System.IO;
+using System.Security.Policy;
 using System.Text;
 using System.Windows.Forms;
 
@@ -80,7 +82,7 @@ namespace YouTubeDownloader
                 using (Process process = new Process())
                 {
                     process.StartInfo.FileName = "yt-dlp.exe";
-                    process.StartInfo.Arguments = "-P " + Path + fileType + URL;
+                    process.StartInfo.Arguments = $"-P \"{Path}\" {fileType} {URL}";
                     process.StartInfo.UseShellExecute = false;
                     process.StartInfo.CreateNoWindow = true;
                     process.StartInfo.RedirectStandardOutput = true;
