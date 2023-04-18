@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             button1 = new Button();
             label1 = new Label();
             groupBox1 = new GroupBox();
+            radioButton3 = new RadioButton();
             radioButton2 = new RadioButton();
             radioButton1 = new RadioButton();
             button2 = new Button();
@@ -39,7 +41,6 @@
             label3 = new Label();
             textBox1 = new TextBox();
             folderBrowserDialog1 = new FolderBrowserDialog();
-            radioButton3 = new RadioButton();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -73,6 +74,18 @@
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "File format";
+            // 
+            // radioButton3
+            // 
+            radioButton3.AutoSize = true;
+            radioButton3.Location = new Point(66, 22);
+            radioButton3.Name = "radioButton3";
+            radioButton3.Size = new Size(101, 19);
+            radioButton3.TabIndex = 2;
+            radioButton3.TabStop = true;
+            radioButton3.Text = "Do not specify";
+            radioButton3.UseVisualStyleBackColor = true;
+            radioButton3.CheckedChanged += radioButton3_CheckedChanged;
             // 
             // radioButton2
             // 
@@ -149,18 +162,6 @@
             // 
             folderBrowserDialog1.InitialDirectory = "%userprofile%\\desktop";
             // 
-            // radioButton3
-            // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(66, 22);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(101, 19);
-            radioButton3.TabIndex = 2;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Do not specify";
-            radioButton3.UseVisualStyleBackColor = true;
-            radioButton3.CheckedChanged += radioButton3_CheckedChanged;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -175,6 +176,7 @@
             Controls.Add(label1);
             Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "Form1";
             Text = "YouTube Downloader";
