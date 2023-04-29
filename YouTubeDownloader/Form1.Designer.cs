@@ -37,7 +37,6 @@
             radioButton1 = new RadioButton();
             button2 = new Button();
             richTextBox1 = new RichTextBox();
-            label2 = new Label();
             label3 = new Label();
             textBox1 = new TextBox();
             folderBrowserDialog1 = new FolderBrowserDialog();
@@ -129,17 +128,8 @@
             richTextBox1.ReadOnly = true;
             richTextBox1.Size = new Size(321, 155);
             richTextBox1.TabIndex = 5;
-            richTextBox1.Text = "";
+            richTextBox1.Text = "Download status will go here";
             richTextBox1.TextChanged += richTextBox1_TextChanged_1;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(272, 9);
-            label2.Name = "label2";
-            label2.Size = new Size(95, 15);
-            label2.TabIndex = 6;
-            label2.Text = "Download status";
             // 
             // label3
             // 
@@ -169,7 +159,6 @@
             ClientSize = new Size(607, 196);
             Controls.Add(textBox1);
             Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(richTextBox1);
             Controls.Add(button2);
             Controls.Add(groupBox1);
@@ -195,7 +184,6 @@
         private RadioButton radioButton1;
         private Button button2;
         private RichTextBox richTextBox1;
-        private Label label2;
         private Label label3;
         private TextBox textBox1;
         private FolderBrowserDialog folderBrowserDialog1;

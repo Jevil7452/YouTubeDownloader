@@ -79,6 +79,7 @@ namespace YouTubeDownloader
             }
             else
             {
+                richTextBox1.Clear();
                 using (Process process = new Process())
                 {
                     process.StartInfo.FileName = "yt-dlp.exe";
