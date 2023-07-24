@@ -150,7 +150,6 @@
             // 
             // folderBrowserDialog1
             // 
-            folderBrowserDialog1.InitialDirectory = "%userprofile%\\desktop";
             // 
             // Form1
             // 
